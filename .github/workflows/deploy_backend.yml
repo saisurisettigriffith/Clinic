@@ -18,4 +18,4 @@ jobs:
       - name: Start the Backend service
         run: |
           cd Backend/clinic-backend
-          npm start
+          gcloud app deploy
