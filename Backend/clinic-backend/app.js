@@ -11,7 +11,7 @@ app.use(cors());
 // app.use(cors({ origin: 'http://example.com' }));
 
 app.get('/', (req, res) => {
-  res.send('Clinic Backend is rusdnning');
+  res.send('Clinic Backjkend is rusdnning');
 });
 
 const PORT = process.env.PORT || 8080;
