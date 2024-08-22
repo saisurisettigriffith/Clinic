@@ -1,0 +1,49 @@
+/* Basic reset for padding and margins */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.header {
+  padding: 20px;
+  background-color: white;
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.main {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-around;
+  background-color: #f8f9fa;
+  border-top: 1px solid #e1e1e1;
+}
+
+.nav-item {
+  flex-grow: 1;
+  padding: 15px 10px;
+  text-align: center;
+  background: none;
+  border: none;
+  font-size: 16px;
+}
+
+/* Optional: Add active state or effects */
+.nav-item:focus {
+  background-color: #e8e8e8;
+}
