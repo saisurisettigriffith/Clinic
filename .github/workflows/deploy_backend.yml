@@ -1,0 +1,21 @@
+name: Deploy Backend on Merge
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'Backend/clinic-backend/**'
+
+jobs:
+  build_and_deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Change to backend directory and install dependencies
+        run: |
+          cd Backend/clinic-backend
+          npm ci
+      - name: Start the Backend service
+        run: |
+          cd Backend/clinic-backend
+          npm start
