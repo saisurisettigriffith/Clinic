@@ -8,7 +8,7 @@ const app = express();
 app.use(cors());
 
 // For restricted access, use:
-// app.use(cors({ origin: 'http://example.com' }));
+// app.use(cors({ orligin: 'http://example.com' }));
 
 app.get('/', (req, res) => {
   res.send('Clinic Backjkend is rusdnning');
