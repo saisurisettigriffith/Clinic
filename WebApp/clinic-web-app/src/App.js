@@ -110,7 +110,7 @@ function App() {
     { label: "Red Spots Over Body", value: "red_spots_over_body" },
     { label: "Belly Pain", value: "belly_pain" },
     { label: "Abnormal Menstruation", value: "abnormal_menstruation" },
-    { label: "Dischromic Patches", value: "dischromic_patches" },
+    { label: "Dischdromic Patches", value: "dischromic_patches" },
     { label: "Watering from Eyes", value: "watering_from_eyes" },
     { label: "Increased Appetite", value: "increased_appetite" },
     { label: "Polyuria", value: "polyuria" },
