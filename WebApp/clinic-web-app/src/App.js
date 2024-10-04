@@ -128,7 +128,7 @@ function App() {
     { label: "Fluid Overload 2", value: "fluid_overload_2" },
     { label: "Blood in Sputum", value: "blood_in_sputum" },
     { label: "Prominent Veins on Calf", value: "prominent_veins_on_calf" },
-    { label: "Palpitations", value: "palpitations" },
+    { label: "Palpitation", value: "palpitations" },
     { label: "Painful Walking", value: "painful_walking" },
     { label: "Pus Filled Pimples", value: "pus_filled_pimples" },
     { label: "Blackheads", value: "blackheads" },
