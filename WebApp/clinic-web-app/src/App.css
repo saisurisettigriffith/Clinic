@@ -1,92 +1,73 @@
-/* Basic reset for padding and margins */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-}
-
-body, html {
-  height: 100%;
-  background-color: #f0f0f0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 }
 
 .App {
   display: flex;
-  flex-direction: column;
-  height: 100%;
-}
-
-.header {
-  padding: 20px;
-  background-color: #fff;
-  text-align: center;
-  font-size: 24px;
-  font-weight: bold;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-.main {
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
+  justify-content: center;
   align-items: center;
+  height: 100vh;
+  background-color: #f2f2f2;
 }
 
-.symptom-selection {
-  margin-bottom: 20px;
-}
-
-.symptom-list {
+.content {
+  width: 60%;
+  max-width: 600px;
+  background: #fff;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
   display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
+  flex-direction: column;
+  gap: 20px;
 }
 
-.symptom-item {
-  padding: 10px;
-  background-color: #e8e8e8;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s;
+h1 {
+  color: #333;
+  font-size: 24px;
 }
 
-.symptom-item:hover {
-  background-color: #d0d0d0;
-}
-
-.selected-symptoms {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin-bottom: 20px;
-}
-
-.selected-symptom {
-  padding: 10px;
-  background-color: #007aff;
-  color: #fff;
-  border-radius: 5px;
-}
-
-.selected-symptom button {
-  margin-left: 10px;
-  background: none;
-  border: none;
-  color: #fff;
-  cursor: pointer;
+.symptom-select {
+  font-size: 16px;
 }
 
 .submit-btn {
   padding: 10px 20px;
-  font-size: 16px;
   background-color: #007aff;
   color: white;
   border: none;
-  border-radius: 5px;
+  border-radius: 8px;
   cursor: pointer;
+  font-size: 16px;
+}
+
+.submit-btn:hover {
+  background-color: #005ecb;
 }
 
 .predictions {
   margin-top: 20px;
+  background-color: #f8f8f8;
+  padding: 15px;
+  border-radius: 8px;
+}
+
+.select__control {
+  border: 1px solid #ccc;
+}
+
+.select__menu {
+  border-radius: 0 0 8px 8px;
+}
+
+.select__option--is-focused {
+  background-color: #eaeaea;
+}
+
+.select__option--is-selected {
+  background-color: #007aff;
+  color: white;
 }
