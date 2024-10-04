@@ -56,7 +56,7 @@ function App() {
         <button type="submit">Check Symptoms</button>
       </form>
       {predictions && <div>
-        <h2>Predictions</h2>
+        <h2>Predictionss</h2>
         <p>{predictions}</p>
       </div>}
     </div>
