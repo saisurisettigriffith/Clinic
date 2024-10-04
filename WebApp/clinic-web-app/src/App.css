@@ -1,41 +1,44 @@
 .App {
   display: flex;
+  flex-direction: column; /* Adjusted for better structure */
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  background-color: #f2f2f2; /* #f0f0f0 is also specified, choose one */
+  background-color: #f2f2f2;
 }
 
 .content {
-  width: 60%;
-  max-width: 600px;
+  width: 90%; /* Adjusted for better responsiveness */
+  max-width: 800px; /* Increased max width */
   background: #fff;
-  padding: 40px;
+  padding: 20px;
   border-radius: 12px;
   box-shadow: 0 4px 6px rgba(0,0,0,0.1);
   display: flex;
   flex-direction: column;
-  gap: 20px;
-  border: 1px solid red; /* Temporary for debugging */
+  overflow-y: auto; /* Allows scrolling within the form */
 }
 
-h1 {
-  color: #333;
-  font-size: 24px;
+.symptoms-list {
+  display: flex;
+  flex-wrap: wrap; /* Allows symptoms to wrap */
+  gap: 10px; /* Adds space between checkboxes */
+  margin-bottom: 20px; /* Space before the submit button */
 }
 
-.symptom-select,
+.symptom-item {
+  flex: 1 1 200px; /* Each item can flex and has a base width */
+}
+
 .submit-btn {
-  font-size: 16px;
-}
-
-.submit-btn {
+  align-self: center; /* Centers the submit button */
   padding: 10px 20px;
   background-color: #007aff;
   color: white;
   border: none;
   border-radius: 8px;
   cursor: pointer;
+  font-size: 16px;
 }
 
 .submit-btn:hover {
@@ -43,25 +46,8 @@ h1 {
 }
 
 .predictions {
-  margin-top: 20px;
   background-color: #f8f8f8;
   padding: 15px;
   border-radius: 8px;
-}
-
-.select__control {
-  border: 1px solid #ccc;
-}
-
-.select__menu {
-  border-radius: 0 0 8px 8px;
-}
-
-.select__option--is-focused {
-  background-color: #eaeaea;
-}
-
-.select__option--is-selected {
-  background-color: #007aff;
-  color: white;
+  margin-top: 20px;
 }

@@ -8,8 +8,6 @@ function App() {
   const [predictions, setPredictions] = useState('');
 
   useEffect(() => {
-    // Fetch the list of symptoms dynamically from the Flask API if available
-    // Alternatively, define them statically if your API does not support it
     setSymptoms([
       "itching", "skin_rash", "nodal_skin_eruptions", "continuous_sneezing", "shivering", "chills", "joint_pain",
       "stomach_pain", "acidity", "ulcers_on_tongue", "muscle_wasting", "vomiting", "burning_micturition",
@@ -57,26 +55,32 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Symptom Checker</h1>
-      <form onSubmit={handleSubmit}>
-        {symptoms.map(symptom => (
-          <div key={symptom}>
-            <input
-              type="checkbox"
-              id={symptom}
-              value={symptom}
-              onChange={handleSymptomChange}
-              checked={selectedSymptoms.includes(symptom)}
-            />
-            <label htmlFor={symptom}>{symptom}</label>
+      <div className="content">
+        <h1>Symptom Checker</h1>
+        <form onSubmit={handleSubmit} className="symptoms-form">
+          <div className="symptoms-list">
+            {symptoms.map(symptom => (
+              <div key={symptom} className="symptom-item">
+                <input
+                  type="checkbox"
+                  id={symptom}
+                  value={symptom}
+                  onChange={handleSymptomChange}
+                  checked={selectedSymptoms.includes(symptom)}
+                />
+                <label htmlFor={symptom}>{symptom}</label>
+              </div>
+            ))}
           </div>
-        ))}
-        <button type="submit">Check Symptoms</button>
-      </form>
-      {predictions && <div>
-        <h2>Predictions</h2>
-        <p>{predictions}</p>
-      </div>}
+          <button type="submit" className="submit-btn">Check Symptoms</button>
+        </form>
+        {predictions && (
+          <div className="predictions">
+            <h2>Predictions</h2>
+            <p>{predictions}</p>
+          </div>
+        )}
+      </div>
     </div>
   );
 }
