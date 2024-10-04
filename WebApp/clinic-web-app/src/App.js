@@ -66,7 +66,7 @@ function App() {
           <div key={symptom}>
             <input
               type="checkbox"
-              id={symptom}
+              id="symptom"
               value={symptom}
               onChange={handleSymptomChange}
               checked={selectedSymptoms.includes(symptom)}
