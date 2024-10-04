@@ -27,7 +27,7 @@
 }
 
 .symptom-item {
-  flex: 1 1 200px; /* Each item can flex and has a base width */
+  flex: 1 1 80%; /* Each item can flex and has a base width */
 }
 
 .submit-btn {
@@ -50,5 +50,4 @@
   padding: 15px;
   border-radius: 8px;
   margin-top: 20px;
-  width: 80%;
 }
