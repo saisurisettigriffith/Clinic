@@ -54,7 +54,7 @@ function App() {
       });
       setPredictions(response.data);
     } catch (error) {
-      console.error('Error fetching predictions:', error);
+      console.error('Error fetching predictions!:', error);
     }
   };
 
