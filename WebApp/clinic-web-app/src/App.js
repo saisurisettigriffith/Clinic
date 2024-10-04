@@ -26,7 +26,7 @@ function App() {
     try {
       const response = await axios({
         method: 'get',
-        url: 'http://saisuri2015.pythonanywhere.com/predict',
+        url: 'https://saisuri2015.pythonanywhere.com/predict',
         params: {
           symptom: selectedSymptoms
         }
