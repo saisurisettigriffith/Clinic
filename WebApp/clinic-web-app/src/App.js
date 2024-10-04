@@ -10,7 +10,7 @@ function App() {
   const symptomsOptions = [
     { label: "Itching", value: "itching" },
     { label: "Skin Rash", value: "skin_rash" },
-    { label: "Nodal Skin Eruptions", value: "nodal_skin_eruptions" },
+    { label: "Nodal Skin Eruption", value: "nodal_skin_eruptions" },
     { label: "Continuous Sneezing", value: "continuous_sneezing" },
     { label: "Shivering", value: "shivering" },
     { label: "Chills", value: "chills" },
