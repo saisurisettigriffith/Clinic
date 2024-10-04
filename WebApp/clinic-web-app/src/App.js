@@ -1,6 +1,6 @@
 import './App.css';
 import React, { useState } from 'react';
-import Select from 'react-select';
+import Select from 'react-select';  // Ensure this import is correct
 import axios from 'axios';
 
 function App() {
@@ -143,14 +143,20 @@ function App() {
   ];
   
 
+  // This function handles the change on select input
   const handleSymptomChange = selectedOptions => {
-    setSelectedSymptoms(selectedOptions);
+    setSelectedSymptoms(selectedOptions || []); // Set to empty array if null
   };
 
+  // Function to handle the submission of symptoms
   const handleSubmit = async () => {
-    const symptoms = selectedSymptoms.map(symptom => symptom.value);
-    const response = await axios.get(`https://saisuri2015.pythonanywhere.com/predict?symptom=${symptoms.join('&symptom=')}`);
-    setPredictions(response.data);
+    if (selectedSymptoms.length > 0) {
+      const symptomsQuery = selectedSymptoms.map(symptom => `symptom=${encodeURIComponent(symptom.value)}`).join('&');
+      const response = await axios.get(`https://saisuri2015.pythonanywhere.com/predict?${symptomsQuery}`);
+      setPredictions(response.data);
+    } else {
+      console.log('No symptoms selected');
+    }
   };
 
   return (
@@ -163,7 +169,7 @@ function App() {
           onChange={handleSymptomChange}
           className="symptom-select"
           classNamePrefix="select"
-          placeholder="Select symptomss..."
+          placeholder="Select symptoms..."
         />
         <button onClick={handleSubmit} className="submit-btn">Check Symptoms</button>
         {predictions && (

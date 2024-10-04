@@ -71,3 +71,16 @@ h1 {
   background-color: #007aff;
   color: white;
 }
+
+.App {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f0f0f0;
+}
+
+.content {
+  padding: 20px;
+  border: 1px solid red;
+}
