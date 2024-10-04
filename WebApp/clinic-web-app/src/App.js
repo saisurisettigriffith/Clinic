@@ -163,7 +163,7 @@ function App() {
           onChange={handleSymptomChange}
           className="symptom-select"
           classNamePrefix="select"
-          placeholder="Select symptoms..."
+          placeholder="Select symptomss..."
         />
         <button onClick={handleSubmit} className="submit-btn">Check Symptoms</button>
         {predictions && (
