@@ -8,6 +8,8 @@ function App() {
   const [predictions, setPredictions] = useState('');
 
   useEffect(() => {
+    // Fetch the list of symptoms dynamically from the Flask API if available
+    // Alternatively, define them statically if your API does not support it
     setSymptoms([
       "itching", "skin_rash", "nodal_skin_eruptions", "continuous_sneezing", "shivering", "chills", "joint_pain",
       "stomach_pain", "acidity", "ulcers_on_tongue", "muscle_wasting", "vomiting", "burning_micturition",
@@ -45,16 +47,11 @@ function App() {
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      const response = await axios({
-        method: 'get',
-        url: 'https://saisuri2015.pythonanywhere.com/predict',
-        params: {
-          symptom: selectedSymptoms
-        }
-      });
+      const queryString = selectedSymptoms.map(symptom => `symptom=${encodeURIComponent(symptom)}`).join('&');
+      const response = await axios.get(`https://saisuri2015.pythonanywhere.com/predict?${queryString}`);
       setPredictions(response.data);
     } catch (error) {
-      console.error('Error fetching predictions!:', error);
+      console.error('Error fetching predictions:', error);
     }
   };
 
@@ -66,7 +63,7 @@ function App() {
           <div key={symptom}>
             <input
               type="checkbox"
-              id="symptom"
+              id={symptom}
               value={symptom}
               onChange={handleSymptomChange}
               checked={selectedSymptoms.includes(symptom)}
