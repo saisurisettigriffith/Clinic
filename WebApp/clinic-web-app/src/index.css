@@ -1,76 +1,67 @@
-/* Basic reset for padding and margins */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-}
-
-body {
-  background-color: #f0f0f0; /* Light grey background similar to macOS */
-}
-
-.app {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-}
-
-.header {
-  padding: 20px;
-  background-color: #ffffff; /* Pure white header background */
-  text-align: center;
-  font-size: 24px;
-  font-weight: bold;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-}
-
-.main {
-  flex-grow: 1;
+.App {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 20px;
-  overflow-y: auto; /* Allows scrolling */
+  min-height: 100vh;
+  background-color: #f2f2f2; /* #f0f0f0 is also specified, choose one */
 }
 
-.nav {
+.content {
+  width: 60%;
+  max-width: 600px;
+  background: #fff;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
   display: flex;
-  justify-content: space-around;
-  background-color: #f8f9fa;
-  border-top: 1px solid #e1e1e1;
+  flex-direction: column;
+  gap: 20px;
+  border: 1px solid red; /* Temporary for debugging */
 }
 
-.nav-item {
-  flex-grow: 1;
-  padding: 15px 10px;
-  text-align: center;
-  background: none;
-  border: none;
+h1 {
+  color: #333;
+  font-size: 24px;
+}
+
+.symptom-select,
+.submit-btn {
   font-size: 16px;
-  cursor: pointer; /* Pointer cursor on nav items */
-  transition: background-color 0.3s; /* Smooth transition for hover effect */
 }
 
-.nav-item:hover, .nav-item:focus {
-  background-color: #e8e8e8; /* Light grey background on hover */
+.submit-btn {
+  padding: 10px 20px;
+  background-color: #007aff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
 }
 
-/* Styling for form elements - checkboxes */
-input[type="checkbox"] {
-  accent-color: #007aff; /* Blue color for checkboxes, similar to macOS */
+.submit-btn:hover {
+  background-color: #005ecb;
 }
 
-/* Custom scrollbars */
-.main::-webkit-scrollbar {
-  width: 8px;
+.predictions {
+  margin-top: 20px;
+  background-color: #f8f8f8;
+  padding: 15px;
+  border-radius: 8px;
 }
 
-.main::-webkit-scrollbar-thumb {
-  background-color: #c1c1c1; /* Scrollbar color */
-  border-radius: 4px;
+.select__control {
+  border: 1px solid #ccc;
 }
 
-.main::-webkit-scrollbar-track {
-  background: transparent;
+.select__menu {
+  border-radius: 0 0 8px 8px;
+}
+
+.select__option--is-focused {
+  background-color: #eaeaea;
+}
+
+.select__option--is-selected {
+  background-color: #007aff;
+  color: white;
 }
